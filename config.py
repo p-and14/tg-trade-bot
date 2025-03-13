@@ -9,6 +9,10 @@ env_path = BASE_DIR.joinpath(".env")
 if env_path.exists():
     load_dotenv(env_path)
 
+
+# ENCODE KEY
+SALT = os.environ.get("SALT")
+
 # DB
 DB_NAME = os.environ.get("DB_NAME", "postgres")
 DB_USER = os.environ.get("DB_USER", "postgres")
@@ -18,3 +22,6 @@ DB_PORT = os.environ.get("DB_PORT", "5432")
 
 # TG
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN")
+
+# INFURA
+INFURA_KEY = os.environ.get("INFURA_KEY")

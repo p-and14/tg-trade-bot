@@ -32,6 +32,6 @@ class Wallet(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True)
     address: Mapped[str] = mapped_column(String(45), unique=True)
-    private_key: Mapped[str] = mapped_column(String(65), unique=True)
+    private_key: Mapped[str] = mapped_column(String(200), unique=True)
     tg_user_id: Mapped[int] = mapped_column(ForeignKey("tg_user.id", ondelete="CASCADE"))
     tg_user: Mapped["TgUser"] = relationship(back_populates="wallet")
